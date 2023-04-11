@@ -69,17 +69,6 @@ Follow the requirements and also complete any prompts in the two component files
                             <svg v-else class="museum-highlight__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"/></svg>
                         </div>
                     </template>
-                    <template #extra>
-                        <div class="museum-highlight__extra">
-                            <div v-if="highlight.news">
-                                {{ highlight.news.title }}
-                            </div>
-                            <div v-if="highlight.quiz">
-                                <span>Quiz: </span><a :href="highlight.quiz" target="_blank">{{ highlight.quiz }}</a>
-                            </div>
-                        </div>
-                        
-                    </template>
                 </museum-highlight>
             </div>
         </div>
@@ -180,7 +169,7 @@ export default {
                 "border-radius": "8px"
             }
            }
-        }
+        },
     },
     created() {
         if (this.spacePartners.observatory) {   
@@ -194,11 +183,13 @@ export default {
                 this.addCustomFlag(item)
             })
 
+            // merge both arrays together
             this.mergeData(this.spaceHighlights, spacePartners)
         } 
         else {
             this.allHighlights = this.spaceHighlights
         }
+        // order the data
         this.orderData(this.allHighlights)
     },
 };
