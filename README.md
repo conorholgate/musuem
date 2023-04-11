@@ -1,6 +1,14 @@
-# musuem
+# Musuem project
 
+## Clone project
+```
+git clone https://github.com/conorholgate/musuem.git
+```
 ## Project setup
+```
+cd musuem
+```
+
 ```
 npm install
 ```
@@ -9,16 +17,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
